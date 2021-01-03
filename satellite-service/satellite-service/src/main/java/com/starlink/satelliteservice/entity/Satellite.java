@@ -15,6 +15,8 @@ import javax.persistence.Id;
 @NoArgsConstructor
 public class Satellite {
 
+    //The satellite object
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long satelliteId;
