@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class SatelliteController {
 
+    //The controller of the satelite rest API
+
     @Autowired
     private SatelliteService satelliteService;
 
