@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/SatelliteApplication.iml" filepath="$PROJECT_DIR$/.idea/SatelliteApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-gateway/cloud-gateway/cloud-gateway.iml" filepath="$PROJECT_DIR$/cloud-gateway/cloud-gateway/cloud-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/constellation-service/constellation-service/constellation-service.iml" filepath="$PROJECT_DIR$/constellation-service/constellation-service/constellation-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/satellite-service/satellite-service/satellite-service.iml" filepath="$PROJECT_DIR$/satellite-service/satellite-service/satellite-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-registry/service-registry/service-registry.iml" filepath="$PROJECT_DIR$/service-registry/service-registry/service-registry.iml" />
+    </modules>
+  </component>
+</project>

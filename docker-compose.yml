@@ -1,0 +1,47 @@
+version: '3'
+services:
+  service-registry:
+    container_name: service-registry
+    build:
+      context: ./service-registry/service-registry
+      dockerfile: Dockerfile
+    image: reefa/service-registry
+    ports:
+    - 8761:8761
+  api-gateway:
+    container_name: api-gateway
+    build:
+      context: ./cloud-gateway/cloud-gateway
+      dockerfile: Dockerfile
+    depends_on:
+      - service-registry
+    image: reefa/api-gateway
+    ports:
+    - 9191:9191
+    links:
+      - service-registry
+  satellite:
+    container_name: satellite-service
+    build:
+      context: ./satellite-service/satellite-service
+      dockerfile: Dockerfile
+    depends_on:
+      - service-registry
+    image: reefa/satellite-service
+    ports:
+      - 9002:9002
+    links:
+      - service-registry
+  constellation:
+    container_name: constellation-service
+    build:
+      context: ./constellation-service/constellation-service
+      dockerfile: Dockerfile
+    depends_on:
+      - service-registry
+    image: reefa/constellation-service
+    ports:
+      - 9001:9001
+    links:
+      - "satellite:satellite-service"
+      - service-registry
