@@ -31,5 +31,6 @@ jobs:
     needs: build 
     name: Build Docker container 
     steps:
+    - uses: actions/checkout@v1
     - name: Build Docker container
       run: docker-compose config
