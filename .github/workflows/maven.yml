@@ -33,6 +33,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build Docker container
-      run: docker-compose config
-    - name: jar file
-      run: ls ./service-registry/service-registry/target
+      run: docker-compose build
