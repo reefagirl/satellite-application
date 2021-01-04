@@ -1,4 +1,4 @@
 FROM openjdk:8
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} service-registry.jar
+VOLUME /tmp
+ADD /target/service-registry-0.0.1-SNAPSHOT.jar service-registry.jar
 ENTRYPOINT ["java","-jar","/service-registry.jar"]
