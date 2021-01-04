@@ -20,5 +20,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build with Maven
+    - name: Build Service Registry
       run: mvn -f ./service-registry/service-registry/pom.xml clean verify
+    - name: Build Satellite Service
+      run: mvn -f ./satellite-service/satellite-service/pom.xml clean verify
