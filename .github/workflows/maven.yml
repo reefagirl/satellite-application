@@ -22,11 +22,6 @@ jobs:
         java-version: 1.8
     - name: Build Service Registry
       run: mvn -f ./service-registry/service-registry/pom.xml clean verify
-    - name: Upload Maven build artifact - service registry
-      uses: actions/upload-artifact@v1
-      with:
-        name: artifact
-        path: ./service-registry/service-registry/target/service-registry-0.0.1-SNAPSHOT.jar
     - name: Build Satellite Service
       run: mvn -f ./satellite-service/satellite-service/pom.xml clean verify
     - name: Build Constellation Service
@@ -42,4 +37,4 @@ jobs:
       with:
         name: artifact
     - name: Build Docker container
-      run: docker-compose config
+      run: docker-compose build
