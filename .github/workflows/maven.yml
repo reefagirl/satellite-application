@@ -24,3 +24,17 @@ jobs:
       run: mvn -f ./service-registry/service-registry/pom.xml clean verify
     - name: Build Satellite Service
       run: mvn -f ./satellite-service/satellite-service/pom.xml clean verify
+    - name: Build Constellation Service
+      run: mvn -f ./constellation-service/constellation-service/pom.xml clean verify
+  deploy: 
+    runs-on: ubuntu-latest  
+    needs: build 
+    name: Build Docker container 
+    steps:
+    - uses: actions/checkout@v2
+    - name: Download Maven build artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: artifact
+    - name: Build Docker container
+      run: docker-compose build
