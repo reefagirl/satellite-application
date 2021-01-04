@@ -33,4 +33,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build Docker container
-      run: docker-compose config
+      run: docker-compose build
