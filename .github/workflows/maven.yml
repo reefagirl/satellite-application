@@ -26,7 +26,9 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: artifact
-        path: ../service-registry/service-registry/target/github-actions-java-maven.jar
+        path: |
+          mkdir -p ./service-registry/service-registry/target
+          ./service-registry/service-registry/target/github-actions-java-maven.jar
     - name: Build Satellite Service
       run: mvn -f ./satellite-service/satellite-service/pom.xml clean verify
     - name: Build Constellation Service
