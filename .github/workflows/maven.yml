@@ -31,10 +31,5 @@ jobs:
     needs: build 
     name: Build Docker container 
     steps:
-    - uses: actions/checkout@v2
-    - name: Download Maven build artifact
-      uses: actions/download-artifact@v1
-      with:
-        name: artifact
     - name: Build Docker container
       run: docker-compose build
