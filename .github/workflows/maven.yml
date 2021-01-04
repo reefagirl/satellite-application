@@ -32,4 +32,4 @@ jobs:
     name: Build Docker container 
     steps:
     - name: Build Docker container
-      run: ./ docker-compose build
+      run: docker-compose config
