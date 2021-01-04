@@ -21,7 +21,12 @@ jobs:
       with:
         java-version: 1.8
     - name: Build Service Registry
-      run: mvn -f ./service-registry/service-registry/pom.xml clean verify
+      run: mvn -f ./service-registry/service-registry/pom.xml package
+    - name: Upload Maven build artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: artifact
+        path: ./service-registry/service-registry/target/*.jar
     - name: Build Satellite Service
       run: mvn -f ./satellite-service/satellite-service/pom.xml clean verify
     - name: Build Constellation Service
